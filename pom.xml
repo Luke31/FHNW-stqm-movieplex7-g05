@@ -8,7 +8,6 @@
     <packaging>war</packaging>
 
     <name>Java EE 7 Hands-on Lab Solution</name>
-
     <dependencies>
         <dependency>
             <groupId>javax</groupId>
@@ -46,8 +45,17 @@
                 <version>2.1.1</version>
                 <configuration>
                     <failOnMissingWebXml>false</failOnMissingWebXml>
+                    <warName>${project.build.finalName}</warName> <!-- Default: ${project.build.finalName} -->
                 </configuration>
             </plugin>
+<!--             <plugin> -->
+<!--                 <groupId>org.apache.maven.plugins</groupId> -->
+<!--                 <artifactId>maven-jar-plugin</artifactId> -->
+<!--                 <version>2.3.2</version> -->
+<!--                 <configuration> -->
+<!--                     <finalName>myJar</finalName>                    -->
+<!--                 </configuration> -->
+<!--             </plugin> -->
             <plugin>
                 <groupId>org.wildfly.plugins</groupId>
                 <artifactId>wildfly-maven-plugin</artifactId>
@@ -55,6 +63,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>
-
